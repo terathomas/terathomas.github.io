@@ -15,14 +15,14 @@ see were created in Tableau.
 
 This analysis covered *21,670* individual patient encounters. *10* different payer groups.  *7* different encounter classes. And *4* different joined databases (patients, encounters, conditions, immunizations). 
 
-![SamplePop](https://terathomas.github.io/images/SamplePop.jpeg)
+![SamplePop](https://terathomas.github.io/images/SamplePop.jpg)
 
 
 ### The CSV
 
 _please note, all patient information is synthetic_
 
-![SamplePopExcel](https://terathomas.github.io/images/SamplePopExcel.jpeg)
+![SamplePopExcel](https://terathomas.github.io/images/SamplePopExcel.jpg)
 
 
 ## Medicare Clinical Laboratory Fee Schedule Private Payer Rates and Volumes 
@@ -33,16 +33,16 @@ The images provided were taken from a presentation created to represent the
 data findings. A similar presentation could be used for hospital administrators
 or health care providers within the clinic environment.
 
-![TopOrdered](https://terathomas.github.io/images/TopOrdered.jpeg)
+![TopOrdered](https://terathomas.github.io/images/TopOrdered.jpg)
 
 This chart represents the top 15 ordered codes used within this sample.
 
-![TopRevenue](https://terathomas.github.io/images/TopRevenue.jpeg)
+![TopRevenue](https://terathomas.github.io/images/TopRevenue.jpg)
 
 This chart represents the top 15 highest earning codes within this sample.
 Note, some of the most frequently ordered codes are *not* the highest earning.
 
-![Var](https://terathomas.github.io/images/Var.jpeg)
+![Var](https://terathomas.github.io/images/Var.jpg)
  
  This plot demonstrates wide variability demonstrated for the most
  frequently ordered code. 
@@ -50,7 +50,7 @@ Note, some of the most frequently ordered codes are *not* the highest earning.
  This result demonstrates an urgent need to examine the reason behind the
  extreme outliers within the sample. 
 
-![VarExcludeOutlier](https://terathomas.github.io/images/VarExcludeOutlier.jpeg)
+![VarExcludeOutlier](https://terathomas.github.io/images/VarExcludeOutlier.jpg)
 
 This is the same plot as previous, but with the outlier removed. 
 You can see how it reduced the average price and standard deviation for this order. 
