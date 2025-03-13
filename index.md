@@ -6,6 +6,10 @@ layout: default
 Welcome to my portfolio where you can explore some of my work with health care data analysis. 
 The work you will see below was conducted through SQL (PgAdmin), Excel, and Tableau. 
 
+[Health Data Tableau Project](./health-tableau.html)
+
+[Link to citations](./citations.html).
+
 
 ## Sample Patient Population Analyzing: Patients, Encounters, Conditions and Immunizations
 
@@ -56,6 +60,3 @@ This is the same plot as previous, but with the outlier removed.
 You can see how it reduced the average price and standard deviation for this order. 
 
 
-[Link to citations](./another-page.html).
-
-[Health Data Tableau Project](./health-tableau.html)
