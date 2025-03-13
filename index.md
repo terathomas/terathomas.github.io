@@ -56,5 +56,6 @@ This is the same plot as previous, but with the outlier removed.
 You can see how it reduced the average price and standard deviation for this order. 
 
 
-[Link to another page](./another-page.html).
+[Link to citations](./another-page.html).
+
 [Health Data Tableau Project](./health-tableau.html)
