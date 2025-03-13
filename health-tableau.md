@@ -7,6 +7,7 @@ description: SQL Code Samples
 ## SQL Code Samples for Preview
 *Below you will see the sample SQL code used to explore the Medicare Lab Payer Project.*
 
+```sql
 -- 
 -- Finding top orders used:
 --
@@ -120,5 +121,6 @@ SELECT
 FROM public.medicarelabs
 GROUP BY hcpcs_cd
 ORDER BY cost_efficiency ASC;
+```
 
 [back](./)
