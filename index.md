@@ -1,124 +1,60 @@
 ---
 layout: default
 ---
+# Welcome
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
+Welcome to my portfolio where you can explore some of my work with health care data analysis. 
+The work you will see below was conducted through SQL (PgAdmin), Excel, and Tableau. 
+
+
+## Sample Patient Population Analyzing: Patients, Encounters, Conditions and Immunizations
+
+Below you will explore a sample population provided by "Data Wizardry", retrieved from Data.CMS.gov.
+The patient population was filtered using SQL, and analyzed through Excel. The visuals you will 
+see were created in Tableau.
+
+This analysis covered *21,670* individual patient encounters. *10* different payer groups.  *7* different encounter classes. And *4* different joined databases (patients, encounters, conditions, immunizations). 
+
+![SamplePop](https://terathomas.github.io/images/SamplePop.jpeg)
+
+
+### The CSV
+
+_please note, all patient information is synthetic_
+
+![SamplePopExcel](https://terathomas.github.io/images/SamplePopExcel.jpeg)
+
+
+## Medicare Clinical Laboratory Fee Schedule Private Payer Rates and Volumes 
+
+Below you will explore a sample analysis using data provided by Data.CMS.gov.
+
+The images provided were taken from a presentation created to represent the 
+data findings. A similar presentation could be used for hospital administrators
+or health care providers within the clinic environment.
+
+![TopOrdered](https://terathomas.github.io/images/TopOrdered.jpeg)
+
+This chart represents the top 15 ordered codes used within this sample.
+
+![TopRevenue](https://terathomas.github.io/images/TopRevenue.jpeg)
+
+This chart represents the top 15 highest earning codes within this sample.
+Note, some of the most frequently ordered codes are *not* the highest earning.
+
+![Var](https://terathomas.github.io/images/Var.jpeg)
+ 
+ This plot demonstrates wide variability demonstrated for the most
+ frequently ordered code. 
+
+ This result demonstrates an urgent need to examine the reason behind the
+ extreme outliers within the sample. 
+
+![VarExcludeOutlier](https://terathomas.github.io/images/VarExcludeOutlier.jpeg)
+
+This is the same plot as previous, but with the outlier removed. 
+You can see how it reduced the average price and standard deviation for this order. 
+
 
 [Link to another page](./another-page.html).
 [Health Data Tableau Project](./health-tableau.html)
-
-There should be whitespace between paragraphs.
-
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
-
-# Header 1
-
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
-
-## Header 2
-
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
-
-### Header 3
-
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
-
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
-```
-
-#### Header 4
-
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-
-##### Header 5
-
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
-
-###### Header 6
-
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
-
-### There's a horizontal rule below this.
-
-* * *
-
-### Here is an unordered list:
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-
-### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
-### Small image
-
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-### Large image
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
-
-
-### Definition lists can be used with HTML syntax.
-
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-```
-The final element.
-```
