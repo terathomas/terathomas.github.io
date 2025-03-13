@@ -1,1 +1,1 @@
-# terathomas.github.io
+# Tera Thomas' Personal Site
