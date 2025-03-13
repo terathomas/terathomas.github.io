@@ -59,3 +59,5 @@ You can see how it reduced the average price and standard deviation for this ord
 [Link to citations](./another-page.html).
 
 [Health Data Tableau Project](./health-tableau.html)
+
+git config pull.rebase true   # rebase
