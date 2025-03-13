@@ -3,6 +3,6 @@ plugins:
 - jekyll-remote-theme
 
 title: Tera Thomas
-description: Tera Thomas explores health data to spot interesting trends.
+description: Tera Thomas analyzes health data to track relevant patterns and trends.
 
 show_downloads: false
