@@ -1,6 +1,6 @@
 ---
 layout: default
-title: SQL Code
+title: Medicare Lab Project SQL Code
 description: SQL Code Samples
 ---
 

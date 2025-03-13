@@ -6,7 +6,7 @@ layout: default
 Welcome to my portfolio where you can explore some of my work with health care data analysis. 
 The work you will see below was conducted through SQL (PgAdmin), Excel, and Tableau. 
 
-[Health Data Tableau Project](./health-tableau.html)
+[Medicare Lab Payer Project SQL Code](./sqlcode.html)
 
 [Link to citations](./citations.html).
 
