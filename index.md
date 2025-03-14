@@ -80,4 +80,5 @@ You can see how it reduced the average price and standard deviation for this ord
 
 [Medicare Lab Payer Project SQL Code](./sqlcode.html)
 
-[Link to citations](./citations.html)
+[Link to Citations & Writing Samples](./citations.html)
+
