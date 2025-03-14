@@ -59,7 +59,7 @@ This chart represents the top 15 most frequently ordered laboratory codes used w
 ![TopRevenue](https://terathomas.github.io/images/TopRevenue.jpg)
 
 This chart represents the top 15 highest earning codes within this sample.
-Note, some of the most frequently ordered codes are *not* the highest earning (as shown by the green highlighting).
+Note, some of the most frequently ordered codes are *not* the highest earning (as shown by the green and orange highlighting).
 
 ![Var](https://terathomas.github.io/images/Var.jpg)
  
