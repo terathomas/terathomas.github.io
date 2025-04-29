@@ -77,6 +77,7 @@ Though the new price variability still seems extreme, there were _several_ order
 
 You can see how it reduced the average price and standard deviation for this order. 
 
+[Flushot 2022 Sample Project Dashboard](./flushot.html)
 
 [Medicare Lab Payer Project SQL Code](./sqlcode.html)
 
