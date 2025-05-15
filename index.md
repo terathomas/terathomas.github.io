@@ -47,9 +47,8 @@ Below you will see a demonstration using real life data provided by Alex the Ana
 
 [Flushot 2022 Sample Project Dashboard](./flushot.html)
 
-[Medicare Lab Payer Project SQL Code](./sqlcode.html)
+[Medicare Lab Payer Project & SQL Code](./sqlcode.html)
 
 [Link to Citations & Writing Samples](./citations.html)
 
-[Link to Lab Ordering Presentation](./laborders.html)
 

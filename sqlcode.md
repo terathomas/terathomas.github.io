@@ -1,10 +1,47 @@
 ---
 layout: default
-title: Medicare Lab Project SQL Code
-description: SQL Code Samples
+title: Medicare Lab Project Presentation & SQL Code
+description: Medicare Presentation & SQL Code Sample
 ---
+# Medicare Clinical Laboratory Fee Schedule Private Payer Rates and Volumes 
 
-## SQL Code Samples for Preview
+Below you will explore a sample analysis using data provided by Data.CMS.gov.
+
+My goal when analyzing this data was to find insightful trends and patterns
+that would be relevant for payer groups or billing offices within a
+hospital system. 
+
+The images provided were taken from a presentation I created to represent the 
+data findings (see the full presentation [here](https://terathomas.github.io/downloads/MedicareSample.pdf)). A similar presentation could be used for hospital administrators or health care providers within the clinic environment.
+
+Here are excerpts from the presentation that I found to be the most insightful:
+
+![TopOrdered](https://terathomas.github.io/images/TopOrdered.jpg)
+
+This chart represents the top 15 most frequently ordered laboratory codes used within this sample. 
+
+![TopRevenue](https://terathomas.github.io/images/TopRevenue.jpg)
+
+This chart represents the top 15 highest earning codes within this sample.
+Note, some of the most frequently ordered codes are *not* the highest earning (as shown by the green and orange highlighting).
+
+![Var](https://terathomas.github.io/images/Var.jpg)
+ 
+ This plot demonstrates wide variability demonstrated for the most
+ frequently ordered code, G0483. 
+
+ This result demonstrates an urgent need to examine the reason behind the
+ extreme outliers within the sample. 
+
+![VarExcludeOutlier](https://terathomas.github.io/images/VarExcludeOutlier.jpg)
+
+This is the same plot as previous, but with the outlier removed. 
+
+Though the new price variability still seems extreme, there were _several_ orders near this new maximal value of $12,098.
+
+You can see how it reduced the average price and standard deviation for this order. 
+
+# SQL Code Samples for Preview
 *Below you will see the sample SQL code used to explore the Medicare Lab Payer Project.*
 
 ```sql
