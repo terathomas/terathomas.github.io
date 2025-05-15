@@ -40,6 +40,10 @@ various population metrics.
 -----------------------
 -----------------------
 
+Below you will see a demonstration using real life data provided by Alex the Analyst, focusing on data professional survey reports. This data was transformed and cleaned through PowerBI Power Query, and then displayed in a Power BI Dashboard. 
+
+# Data Professional Survey 
+
 
 [Flushot 2022 Sample Project Dashboard](./flushot.html)
 
