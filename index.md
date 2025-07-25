@@ -11,7 +11,7 @@ The work you will see below was conducted through SQL (PgAdmin), Excel, and Tabl
 
 # Sample Patient Population Analyzing: Patients, Encounters, Conditions and Immunizations
 
-Below you will explore a sample population provided by "Data Wizardry", retrieved from Data.CMS.gov.
+Below you will explore a sample population retrieved from Data.CMS.gov.
 The patient population was filtered using SQL, and analyzed through Excel. The visuals you will 
 see were created in Tableau.
 
@@ -41,7 +41,7 @@ various population metrics.
 ----------------------- 
 
 # Data Professional Survey 
-Below you will see a demonstration using real life data provided by Alex the Analyst, focusing on data professional survey reports. This data was transformed and cleaned through Power BI Power Query, and then displayed in a dashboard.
+Below you will see a demonstration using real life data provided by "Alex the Analyst", focusing on data professional survey reports. This data was transformed and cleaned through Power BI Power Query, and then displayed in a dashboard.
 
 ![PowerBI](https://terathomas.github.io/images/PowerBI.jpg)
 
