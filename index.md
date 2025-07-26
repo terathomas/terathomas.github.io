@@ -179,7 +179,7 @@ FROM encounters
 
 <h2>Sample Patient Population Analysis</h2>
 <p>Explore how Python and Pandas transform healthcare data into actionable insights.</p>
-<iframe src="pythonHCprac.html" width="100%" height="600px" style="border:none;"></iframe>
+<iframe src="images/pythonHCprac.html" width="100%" height="600px" style="border:none;"></iframe>
 
 [View my python notebook](https://terathomas.github.io/pythonHCprac.html)
 
