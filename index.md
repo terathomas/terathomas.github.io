@@ -7,7 +7,7 @@ Hello, I am Tera Thomas. My background in academic and clinical research has lau
 
 I welcome you to my digital portfolio, where you can explore some of my work with health care data analytics. 
 
-The work you will see below was conducted through SQL (PgAdmin), Excel, and Tableau. 
+The work you will see below was conducted through SQL (PgAdmin), Excel, Python (VS Code), Tableau and Power BI/Power Query. 
 
 # Sample Patient Population Analyzing: Patients, Encounters, Conditions and Immunizations
 
@@ -63,6 +63,116 @@ var scriptElement = document.createElement('script');
 scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
 vizElement.parentNode.insertBefore(scriptElement, vizElement);                
 </script>
+
+-----------------------
+-----------------------
+
+# SQL Code Samples for Preview
+*Below you will see the sample SQL code used to explore a sample patient population.*
+
+```sql
+SELECT 
+  e.start,
+  e.stop,
+  e.id AS encounter_id,
+  e.patient,
+  e.encounterclass,
+  e.code,
+  e.description,
+  e.total_claim_cost,
+  p.id AS patient_id,
+  p.birthdate,
+  p.deathdate,
+  p.gender,
+  p.city,
+  p.state,
+  p.county
+FROM encounters e
+JOIN patients p ON e.patient = p.id;
+
+--count encounters by gender
+SELECT patients.gender, COUNT(DISTINCT encounters.id) AS encounters_count
+FROM encounters
+JOIN patients ON encounters.patient = patients.id
+GROUP BY patients.gender;
+
+-- avg total_claim_cost by encounter class
+SELECT encounterclass, AVG(total_claim_cost)
+FROM encounters
+JOIN patients ON encounters.patient = patients.id
+GROUP BY encounterclass
+
+-- count of patients with recorded death date
+SELECT COUNT(patients.id)
+FROM encounters
+JOIN patients ON encounters.patient = patients.id
+WHERE deathdate IS NOT NULL
+
+--admission duration - exact minutes
+SELECT encounters.id AS encounter_id,
+       start,
+       stop,
+       stop - start AS admission_duration
+FROM encounters
+JOIN patients ON encounters.patient = patients.id
+
+--admission duration in hours
+SELECT encounters.id AS encounter_id,
+       start,
+       stop,
+	   description,
+       EXTRACT(EPOCH FROM (stop - start)) / 3600 AS admission_hours
+AVG(amission_hours)
+FROM encounters
+JOIN patients ON encounters.patient = patients.id
+
+--average admission hours
+SELECT AVG(EXTRACT(EPOCH FROM (stop - start)) / 3600) AS avg_admission_hours
+FROM encounters
+JOIN patients ON encounters.patient = patients.id;
+
+-- top 5 cities with highest total claim cost
+SELECT city,
+SUM(total_claim_cost) AS city_costs
+FROM encounters
+JOIN patients ON encounters.patient = patients.id
+GROUP BY city
+ORDER BY city_costs DESC
+LIMIT 5
+
+--find total unique encounters
+SELECT DISTINCT encounters.encounterclass
+FROM encounters
+JOIN patients
+  ON encounters.patient = patients.id;
+
+--find count of each encounter
+SELECT encounters.encounterclass, COUNT(*) AS encounter_count
+FROM encounters
+JOIN patients
+  ON encounters.patient = patients.id
+GROUP BY encounters.encounterclass
+ORDER BY encounter_count DESC
+
+-- which encounter class has highest avg admissions duration
+SELECT encounterclass, 
+	AVG(EXTRACT(EPOCH FROM (stop - start)) / 3600) AS avg_admission_hours
+FROM encounters
+JOIN patients ON encounters.patient = patients.id
+GROUP BY encounterclass
+ORDER BY avg_admission_hours DESC
+
+-- partition total cost by patient
+SELECT 
+  patient,
+  encounterclass,
+  total_claim_cost,
+  SUM(total_claim_cost) OVER (PARTITION BY patient) AS total_cost_per_patient
+FROM encounters
+
+```
+-----------------------
+-----------------------
 
 For other projects see below: 
 
