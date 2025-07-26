@@ -174,6 +174,13 @@ FROM encounters
 -----------------------
 -----------------------
 
+# Python Code for Sample Patient Population. 
+*Python* and *PANDAS* empower seamless data manipulation and intuitive visualization, turning raw healthcare data into actionable insights. By pairing flexible scripting with powerful built-in tools, I was able to uncover trends with clarity and precision...no dashboard required.
+
+[View my python notebook](https://terathomas.github.io/pythonHCprac.ipynb)
+
+
+
 For other projects see below: 
 
 [Medicare Lab Payer Project & SQL Code](./sqlcode.html)
