@@ -175,13 +175,9 @@ FROM encounters
 -----------------------
 
 # Python Code for Sample Patient Population. 
-*Python* and *PANDAS* empower seamless data manipulation and intuitive visualization, turning raw healthcare data into actionable insights. By pairing flexible scripting with powerful built-in tools, I was able to uncover trends with clarity and precision...no dashboard required.
+**Python** and **PANDAS** empower seamless data manipulation and intuitive visualization, turning raw healthcare data into actionable insights. By pairing flexible scripting with powerful built-in tools, I was able to uncover trends with clarity and precision...no dashboard required.
 
-<h2>Sample Patient Population Analysis</h2>
-<p>Explore how Python and Pandas transform healthcare data into actionable insights.</p>
-<iframe src="pythonHCprac.html" width="100%" height="600px" style="border:none;"></iframe>
-
-[View my python notebook](https://terathomas.github.io/pythonHCprac.html)
+[Click Here to View the Python Code and Visuals](https://terathomas.github.io/pythonHCprac.html)
 
 
 For other projects see below: 
