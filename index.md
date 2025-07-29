@@ -179,6 +179,112 @@ FROM encounters
 
 <iframe src="pythonHCprac.html" width="100%" height="600px" style="border:none;"></iframe>
 
+# Data Cleaning and Ad Hoc SQL Results
+Below you will see an example of importing, type casting, and the performance of ad hoc analysis. The data can then be visualized and shared with stakeholders for insightful business actions. 
+
+```sql
+-- Data Cleaning
+-- Goals: normalize NULLs, make data types consistent, remove bad rows, trim extra space
+--
+DROP TABLE IF EXISTS provider_data_cleaned;
+
+CREATE TABLE provider_data_cleaned AS
+SELECT
+  NULLIF(TRIM(Rndrng_Prvdr_CCN::TEXT), '')::INTEGER AS Rndrng_Prvdr_CCN,
+  NULLIF(TRIM(Rndrng_Prvdr_Org_Name), '') AS Rndrng_Prvdr_Org_Name,
+  NULLIF(TRIM(Rndrng_Prvdr_St), '') AS Rndrng_Prvdr_St,
+  NULLIF(TRIM(Rndrng_Prvdr_City), '') AS Rndrng_Prvdr_City,
+  NULLIF(TRIM(Rndrng_Prvdr_State_Abrvtn), '') AS Rndrng_Prvdr_State_Abrvtn,
+  NULLIF(TRIM(Rndrng_Prvdr_State_FIPS::TEXT), '')::INTEGER AS Rndrng_Prvdr_State_FIPS,
+  NULLIF(TRIM(Rndrng_Prvdr_Zip5), '') AS Rndrng_Prvdr_Zip5,
+  NULLIF(TRIM(Rndrng_Prvdr_RUCA::TEXT), '')::INTEGER AS Rndrng_Prvdr_RUCA,
+  NULLIF(TRIM(Rndrng_Prvdr_RUCA_Desc), '') AS Rndrng_Prvdr_RUCA_Desc,
+  NULLIF(TRIM(APC_Cd::TEXT), '')::INTEGER AS APC_Cd,
+  NULLIF(TRIM(APC_Desc), '') AS APC_Desc,
+  NULLIF(TRIM(Bene_Cnt::TEXT), '')::INTEGER AS Bene_Cnt,
+  NULLIF(TRIM(CAPC_Srvcs::TEXT), '')::INTEGER AS CAPC_Srvcs,
+  NULLIF(TRIM(Avg_Tot_Sbmtd_Chrgs::TEXT), '')::NUMERIC(10,4) AS Avg_Tot_Sbmtd_Chrgs,
+  NULLIF(TRIM(Avg_Mdcr_Alowd_Amt::TEXT), '')::NUMERIC(10,4) AS Avg_Mdcr_Alowd_Amt,
+  NULLIF(TRIM(Avg_Mdcr_Pymt_Amt::TEXT), '')::NUMERIC(10,4) AS Avg_Mdcr_Pymt_Amt,
+  NULLIF(TRIM(Outlier_Srvcs::TEXT), '')::INTEGER AS Outlier_Srvcs,
+  NULLIF(TRIM(Avg_Mdcr_Outlier_Amt::TEXT), '')::NUMERIC(10,4) AS Avg_Mdcr_Outlier_Amt
+FROM provider_data
+
+-- remove rows with negative values
+DELETE FROM provider_data_cleaned
+WHERE Avg_Tot_Sbmtd_Chrgs < 0
+   OR Avg_Mdcr_Alowd_Amt < 0
+   OR Avg_Mdcr_Pymt_Amt < 0
+   OR Avg_Mdcr_Outlier_Amt < 0;
+
+-- delete any zip codes that arent 5 digits long
+DELETE FROM provider_data_cleaned
+WHERE Rndrng_Prvdr_Zip5 IS NOT NULL
+  AND LENGTH(Rndrng_Prvdr_Zip5) != 5;
+
+-- Returned = 0 
+
+-- Check NULL Values
+SELECT COUNT(*) AS total_rows,
+       COUNT(Avg_mdcr_pymt_amt) AS non_null_payments
+FROM provider_data;
+
+SELECT DISTINCT Avg_mdcr_pymt_amt
+FROM provider_data
+WHERE Avg_mdcr_pymt_amt IS NOT NULL
+LIMIT 10;
+
+-- DATA CLEANING COMPLETE -- 
+
+-- Top 10 states with most providers
+SELECT rndrng_prvdr_state_abrvtn, COUNT(*) 
+AS provider_count
+FROM provider_data_cleaned
+GROUP BY  rndrng_prvdr_state_abrvtn
+ORDER BY provider_count DESC
+LIMIT 10;
+
+--Average Medicare payment amount by ZIP code - NON NULL
+SELECT rndrng_prvdr_zip5, AVG(Avg_mdcr_pymt_amt) AS avg_payment
+FROM provider_data_cleaned
+WHERE Avg_mdcr_pymt_amt IS NOT NULL
+GROUP BY rndrng_prvdr_zip5
+ORDER BY avg_payment DESC
+LIMIT 10;
+
+-- Most commonly billed APC codes
+SELECT APC_Cd, APC_Desc, SUM(Bene_Cnt) AS total_beneficiaries
+FROM provider_data_cleaned
+GROUP BY APC_Cd, APC_Desc
+ORDER BY total_beneficiaries DESC
+LIMIT 10;
+
+-- Top providers by total CAPC services - NON NULL 
+SELECT rndrng_prvdr_org_name, SUM(CAPC_Srvcs) AS total_capc
+FROM provider_data
+WHERE CAPC_Srvcs IS NOT NULL
+GROUP BY rndrng_prvdr_org_name
+ORDER BY total_capc DESC
+LIMIT 10;
+
+-- Avg Medicare payment by rural vs. urban
+SELECT rndrng_prvdr_RUCA_desc, AVG(Avg_Mdcr_Pymt_Amt) AS avg_payment
+FROM provider_data_cleaned
+WHERE Avg_Mdcr_Pymt_Amt IS NOT NULL
+GROUP BY Rndrng_prvdr_RUCA_desc
+ORDER BY Avg_payment DESC 
+
+-- Providers with the highest outlier payments
+SELECT Rndrng_Prvdr_Org_Name, AVG(avg_mdcr_outlier_amt) AS avg_outlier_payment
+FROM provider_data_cleaned
+WHERE avg_mdcr_outlier_amt IS NOT NULL
+GROUP BY rndrng_prvdr_org_name
+ORDER BY avg_outlier_payment DESC 
+LIMIT 10;
+```
+
+-----------------------
+-----------------------
 
 For other projects see below: 
 
