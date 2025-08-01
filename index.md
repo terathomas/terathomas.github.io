@@ -290,6 +290,8 @@ For other projects see below:
 
 [Medicare Lab Payer Project & SQL Code](./sqlcode.html)
 
+[Data Cleaning & Joining From Various Sources Sample](./flushot.html)
+
 [Link to Citations & Writing Samples](./citations.html)
 
 
